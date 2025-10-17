@@ -11,7 +11,8 @@ export const App = () => {
   if (normalizedQuery) {
     visibleMovies = visibleMovies.filter(movie => {
       const matchesTitle = movie.title.toLowerCase().includes(normalizedQuery);
-      const matchesDescription = movie.description
+      const description = movie.description || '';
+      const matchesDescription = description
         .toLowerCase()
         .includes(normalizedQuery);
 
